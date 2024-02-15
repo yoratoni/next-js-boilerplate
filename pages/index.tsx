@@ -1,7 +1,12 @@
 export default function Index() {
     return (
-        <div className="bg-red-500 w-[40px]">
-            <h1 className="text-red-500">Hello, world!</h1>
+        <div className="flex items-center justify-center w-full h-screen bg-neutral-900">
+            <h1 className="text-6xl text-white leading-[40px] text-center">
+                Next.js Boilerplate<br />
+                <span className="text-2xl">
+                    by Yoratoni
+                </span>
+            </h1>
         </div>
     );
 }
