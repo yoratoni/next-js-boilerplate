@@ -5,5 +5,8 @@
     "repository": "https://github.com/yoratoni/next-js-boilerplate",
     "author": "yoratoni <yoratoni.dev@gmail.com>",
     "license": "MIT",
-    "private": true
+    "private": true,
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {}
 }
