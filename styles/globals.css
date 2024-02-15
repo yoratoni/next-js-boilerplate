@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    color-scheme: dark;
+    font-family: sans-serif;
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    @apply text-[40px] font-medium leading-[52px];
+}
+
+h2 {
+    @apply text-[36px] font-medium leading-[44px];
+}
+
+h3 {
+    @apply text-[32px] font-medium leading-[40px];
+}
+
+h4 {
+    @apply text-[28px] font-medium leading-[36px];
+}
+
+h5 {
+    @apply text-[24px] font-bold leading-[32px];
+}
+
+h6 {
+    @apply text-[20px] font-bold leading-[28px];
+}
+
+p {
+    @apply max-w-sm text-[21px] font-normal leading-8 lg:max-w-2xl xl:max-w-4xl text-center;
+}
