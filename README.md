@@ -4,10 +4,10 @@ A Next.js & EsLint boilerplate entirely configured to suit my standards.
 Summary
 -------
 You can find here a list of the main features of this boilerplate:
+- [Next.js](https://nextjs.org/) support (v14).
 - [TypeScript](https://www.typescriptlang.org/) support.
 - [TailwindCSS](https://tailwindcss.com/) support.
 - [EsLint](https://eslint.org/) support (already configured).
-- [Next.js](https://nextjs.org/) support (v14).
 
 Here's the list of the main EsLint rules:
 - **[ERROR]** UNIX linebreaks.
