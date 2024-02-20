@@ -1,4 +1,4 @@
-export default function Index() {
+export default function Homepage() {
     return (
         <div className="flex items-center justify-center w-full h-screen bg-neutral-900">
             <h1 className="text-6xl text-white leading-[40px] text-center">
