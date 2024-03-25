@@ -1,5 +1,8 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+    env: {
+        // Add environment variables here
+    },
     images: {
         remotePatterns: [
             { protocol: "http", hostname: "**" },
