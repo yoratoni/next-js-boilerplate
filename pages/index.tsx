@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Homepage() {
     return (
         <div className="flex flex-col items-center justify-center w-full min-h-screen">
-            <h1 className="text-5xl font-bold">Nextron Boilerplate</h1>
+            <h1 className="text-5xl font-bold">Next.js Boilerplate</h1>
             <h4 className="text-xl font-semibold">
                 by&nbsp;
                 <Link
