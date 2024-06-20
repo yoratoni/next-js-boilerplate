@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 
 import "@/styles/globals.css";
-import { RobotoMono } from "@/lib/fonts";
+import { RobotoMono } from "@/lib/client/fonts";
 
 
 export default function App({
