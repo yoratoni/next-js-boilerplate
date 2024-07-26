@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 
 import "@/styles/globals.css";
 import { RobotoMono } from "@/lib/client/fonts";
-import { tw } from "@/lib/utils/cssTools";
+import { tw } from "@/lib/client/utils/cssTools";
 
 
 export default function App({
