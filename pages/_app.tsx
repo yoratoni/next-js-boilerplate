@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 
 import "@/styles/globals.css";
 import { RobotoMono } from "@/lib/client/fonts";
+import { merge } from "@/lib/utils/cssUtils";
 
 
 export default function App({
@@ -9,7 +10,7 @@ export default function App({
     pageProps
 }: AppProps) {
     return (
-        <div className={`${RobotoMono.variable} font-roboto-mono`}>
+        <div className={merge(RobotoMono.variable, "font-roboto-mono")}>
             <Component {...pageProps} />
         </div>
     );
