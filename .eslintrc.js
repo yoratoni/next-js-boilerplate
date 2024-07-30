@@ -54,6 +54,19 @@ module.exports = {
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/no-unused-vars": "warn",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/member-delimiter-style": [
+            "error",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false
+                }
+            }
+        ],
 
         // Next.js
         "@next/next/no-img-element": "warn",
