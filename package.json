@@ -27,8 +27,6 @@
         "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
-        "@babel/core": "^7.25.2",
-        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@biomejs/biome": "^1.8.3",
         "@iconify/react": "^5.0.2",
         "@types/node": "^22.5.1",
