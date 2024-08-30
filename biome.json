@@ -1,0 +1,60 @@
+{
+    "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "a11y": {
+                "noAutofocus": "off",
+                "useButtonType": "off"
+            },
+            "complexity": {
+                "noForEach": "off"
+            },
+            "correctness": {
+                "useExhaustiveDependencies": "warn",
+                "noUnusedVariables": "warn",
+                "noUnusedImports": "warn"
+            },
+            "style": {
+                "noNegationElse": "warn",
+                "useFragmentSyntax": "off"
+            },
+            "suspicious": {
+                "noArrayIndexKey": "off",
+                "noConsoleLog": "warn",
+                "noEmptyBlockStatements": "error",
+                "useAwait": "error"
+            }
+        }
+    },
+    "javascript": {
+        "jsxRuntime": "reactClassic",
+        "formatter": {
+            "enabled": true,
+            "semicolons": "asNeeded",
+            "quoteStyle": "double",
+            "indentStyle": "tab",
+            "lineWidth": 120,
+            "lineEnding": "lf",
+            "bracketSpacing": true,
+            "jsxQuoteStyle": "double",
+            "arrowParentheses": "asNeeded",
+            "indentWidth": 4
+        }
+    },
+    "json": {
+        "formatter": {
+            "enabled": false
+        }
+    },
+    "files": {
+        "ignore": [
+            "node_modules/**/*",
+            ".next/**/*"
+        ]
+    }
+}

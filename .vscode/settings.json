@@ -1,0 +1,46 @@
+{
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "[typescript][typescriptreact][javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.biome": "explicit",
+            "source.fixAll.biome": "explicit",
+            "source.fixAll.eslint": "explicit"
+        }
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".git": true,
+        ".pytest_cache": true,
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.contentlayer": true,
+        "**/.dart_tool": true,
+        "**/.factorypath": true,
+        "**/.gitattributes": true,
+        "**/.idea": true,
+        "**/.metadata": true,
+        "**/.next": true,
+        "**/.nyc_output": true,
+        "**/.packages": true,
+        "**/.project": true,
+        "**/.pytest_cache": true,
+        "**/.settings": true,
+        "**/.vscode": true,
+        "**/.yarn": true,
+        "**/.yarnrc": true,
+        "**/blob_storage": true,
+        "**/Cargo.lock": true,
+        "**/contracts/src/cache": true,
+        "**/contracts/src/deployments": true,
+        "**/next-env.d.ts": true,
+        "**/pubspec.lock": true,
+        "packages/contracts/cache": true
+    }
+}
