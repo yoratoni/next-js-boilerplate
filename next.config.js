@@ -4,8 +4,9 @@ const nextConfig = {
 		remotePatterns: [
 			{ protocol: "http", hostname: "**" },
 			{ protocol: "https", hostname: "**" },
+			{ protocol: "http", hostname: "localhost" },
+			{ protocol: "https", hostname: "localhost" },
 		],
-		domains: ["localhost"],
 	},
 	reactStrictMode: true,
 	swcMinify: true,
