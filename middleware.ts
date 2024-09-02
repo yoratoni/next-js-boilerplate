@@ -1,0 +1,76 @@
+import type { NextRequest } from "next/server"
+import { NextResponse } from "next/server"
+
+// Fully permissive CSP header for development
+const fullyPermissiveCspHeader = `
+    default-src * data: mediastream: blob: filesystem: about: ws: wss: 'unsafe-eval' 'wasm-unsafe-eval' 'unsafe-inline';
+    script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+    script-src-elem * data: blob: 'unsafe-inline';
+    connect-src * data: blob: 'unsafe-inline';
+    img-src * data: blob: 'unsafe-inline';
+    media-src * data: blob: 'unsafe-inline';
+    frame-src * data: blob: ;
+    style-src * data: blob: 'unsafe-inline';
+    font-src * data: blob: 'unsafe-inline';
+    frame-ancestors * data: blob:;
+`
+	.replace(/\s{2,}/g, " ")
+	.trim()
+
+export function middleware(request: NextRequest) {
+	const isDev = process.env.NODE_ENV !== "production"
+	const nonce = crypto.randomUUID()
+
+	const cspHeader = `
+        default-src 'none';
+        connect-src 'self' *.yoratoni.com;
+        script-src 'self' 'strict-dynamic' 'nonce-${nonce}' https: http: 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
+        font-src 'self' *.googleapis.com *.gstatic.com;
+        img-src 'self' blob: data:;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+        frame-src 'self' *.youtube.com;
+        frame-ancestors 'self';
+        manifest-src 'self';
+        media-src 'self';
+        worker-src 'self';
+        upgrade-insecure-requests;
+    `
+		.replace(/\s{2,}/g, " ")
+		.trim()
+
+	// Use fully permissive CSP header in development
+	const header = isDev ? fullyPermissiveCspHeader : cspHeader
+
+	// Request headers
+	const requestHeaders = new Headers(request.headers)
+	requestHeaders.set("x-nonce", nonce)
+	requestHeaders.set("Content-Security-Policy", header)
+
+	// Response headers
+	const response = NextResponse.next({ request: { headers: requestHeaders } })
+	response.headers.set("Content-Security-Policy", header)
+
+	return response
+}
+
+export const config = {
+	/**
+	 * Match all request paths except for the ones starting with:
+	 * - api (API routes)
+	 * - _next/static (static files)
+	 * - _next/image (image optimization files)
+	 * - favicon.ico (favicon file)
+	 */
+	matcher: [
+		{
+			source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+			missing: [
+				{ type: "header", key: "next-router-prefetch" },
+				{ type: "header", key: "purpose", value: "prefetch" },
+			],
+		},
+	],
+}
