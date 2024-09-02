@@ -1,0 +1,19 @@
+// This basic EsLint configuration file is only here for Next.js to work when building the project.
+// For the rest, it has been replaced by Biome.
+{
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        // General rules
+        "no-unused-vars": "off",
+        // TypeScript specific rules
+        "@typescript-eslint/no-unused-vars": "off"
+    }
+}

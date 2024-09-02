@@ -15,7 +15,7 @@
                 "noForEach": "off"
             },
             "correctness": {
-                "useExhaustiveDependencies": "warn",
+                "useExhaustiveDependencies": "off",
                 "noUnusedVariables": "warn",
                 "noUnusedImports": "warn"
             },
