@@ -16,7 +16,8 @@
         "format": "biome format .",
         "format:fix": "biome format --write .",
         "next:lint": "next lint",
-        "check-types": "tsc --noEmit --skipLibCheck --incremental false"
+        "check-types": "tsc --noEmit --skipLibCheck --incremental false",
+        "test": "echo 'Unit testing is not configured for now, skipping..'"
     },
     "dependencies": {
         "clsx": "^2.1.1",
