@@ -21,27 +21,27 @@
     },
     "dependencies": {
         "clsx": "^2.1.1",
-        "next": "^14.2.7",
+        "next": "^14.2.13",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "tailwind-merge": "^2.5.2",
-        "tailwindcss": "^3.4.10",
+        "tailwindcss": "^3.4.12",
         "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.8.3",
+        "@biomejs/biome": "^1.9.2",
         "@iconify/react": "^5.0.2",
-        "@types/node": "^22.5.2",
-        "@types/react": "^18.3.5",
+        "@types/node": "^22.5.5",
+        "@types/react": "^18.3.8",
         "@types/react-dom": "^18.3.0",
-        "@typescript-eslint/eslint-plugin": "^8.4.0",
-        "@typescript-eslint/parser": "^8.4.0",
+        "@typescript-eslint/eslint-plugin": "^8.6.0",
+        "@typescript-eslint/parser": "^8.6.0",
         "autoprefixer": "^10.4.20",
         "eslint": "^8.57.0",
-        "eslint-config-next": "^14.2.7",
-        "postcss": "^8.4.44",
+        "eslint-config-next": "^14.2.13",
+        "postcss": "^8.4.47",
         "tsconfig-paths": "^4.2.0",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.2"
     },
     "resolutions": {
         "@types/react": "^18.3.5",
