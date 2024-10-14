@@ -8,6 +8,9 @@ declare global {
 
 			// Node environment
 			NODE_ENV: "development" | "production"
+
+			// The domain of the application
+			NEXT_PUBLIC_DOMAIN: string
 		}
 	}
 }

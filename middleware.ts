@@ -23,8 +23,8 @@ export function middleware(request: NextRequest) {
 
 	const cspHeader = `
         default-src 'none';
-        connect-src 'self' *.yoratoni.com;
-        script-src 'self' 'strict-dynamic' 'nonce-${nonce}' https: http: 'unsafe-inline';
+        connect-src 'self' *.${process.env.NEXT_PUBLIC_DOMAIN};
+        script-src 'strict-dynamic' 'nonce-${nonce}';
         style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
         font-src 'self' *.googleapis.com *.gstatic.com;
         img-src 'self' blob: data:;
@@ -49,10 +49,17 @@ export function middleware(request: NextRequest) {
 	requestHeaders.set("x-nonce", nonce)
 	requestHeaders.set("Content-Security-Policy", header)
 
-	// Response headers
-	const response = NextResponse.next({ request: { headers: requestHeaders } })
-	response.headers.set("Content-Security-Policy", header)
+	// Response headers based on status
+	let response: NextResponse<unknown>
 
+	if (process.env.NEXT_PUBLIC_APP_STATUS === "enabled") {
+		response = NextResponse.next({ request: { headers: requestHeaders } })
+	} else {
+		request.nextUrl.pathname = "/unavailable"
+		response = NextResponse.rewrite(new URL(request.nextUrl), { request: { headers: requestHeaders } })
+	}
+
+	response.headers.set("Content-Security-Policy", header)
 	return response
 }
 
@@ -63,10 +70,11 @@ export const config = {
 	 * - _next/static (static files)
 	 * - _next/image (image optimization files)
 	 * - favicon.ico (favicon file)
+	 * - assets (assets folder containing all static files)
 	 */
 	matcher: [
 		{
-			source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+			source: "/((?!api|_next/static|_next/image|favicon.ico|assets).*)",
 			missing: [
 				{ type: "header", key: "next-router-prefetch" },
 				{ type: "header", key: "purpose", value: "prefetch" },
