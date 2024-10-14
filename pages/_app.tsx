@@ -3,15 +3,15 @@ import NextApp from "next/app"
 import "@/styles/globals.css"
 
 import NonceProvider from "@/components/contexts/Nonce"
-import { RobotoMono } from "@/lib/client/fonts"
-import { tw } from "@/lib/client/utils/cssTools"
+import { RobotoMono } from "@/lib/fonts"
+import { cn } from "@/lib/utils/styling"
 
 type AppProps = NextAppProps & { nonce?: string }
 
 export default function App({ Component, pageProps, nonce }: AppProps) {
 	return (
 		<NonceProvider nonce={nonce}>
-			<div className={tw(RobotoMono.variable, "font-roboto-mono")}>
+			<div className={cn(RobotoMono.variable, "font-roboto-mono")}>
 				<Component {...pageProps} />
 			</div>
 		</NonceProvider>

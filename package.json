@@ -21,27 +21,28 @@
     },
     "dependencies": {
         "clsx": "^2.1.1",
-        "next": "^14.2.13",
+        "next": "^14.2.15",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "tailwind-merge": "^2.5.2",
+        "sharp": "^0.33.5",
+        "tailwind-merge": "^2.5.3",
         "tailwindcss": "^3.4.13",
         "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.9.2",
+        "@biomejs/biome": "^1.9.3",
         "@iconify/react": "^5.0.2",
-        "@types/node": "^22.6.1",
-        "@types/react": "^18.3.5",
-        "@types/react-dom": "^18.3.0",
-        "@typescript-eslint/eslint-plugin": "^8.7.0",
-        "@typescript-eslint/parser": "^8.7.0",
+        "@types/node": "^22.7.5",
+        "@types/react": "^18.3.11",
+        "@types/react-dom": "^18.3.1",
+        "@typescript-eslint/eslint-plugin": "^8.8.1",
+        "@typescript-eslint/parser": "^8.8.1",
         "autoprefixer": "^10.4.20",
         "eslint": "^8.57.1",
-        "eslint-config-next": "^14.2.13",
+        "eslint-config-next": "^14.2.15",
         "postcss": "^8.4.47",
         "tsconfig-paths": "^4.2.0",
-        "typescript": "^5.6.2"
+        "typescript": "^5.6.3"
     },
     "resolutions": {
         "@types/react": "^18.3.5",

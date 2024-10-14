@@ -7,6 +7,6 @@ import { twMerge } from "tailwind-merge"
  * @param inputs The Tailwind CSS classes to merge.
  * @returns The merged Tailwind CSS classes.
  */
-export function tw(...inputs: ClassValue[]) {
+export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))
 }
