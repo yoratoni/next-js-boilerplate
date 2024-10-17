@@ -5,7 +5,7 @@ const baseUrl = "/api/status"
 
 // This function is overloaded to allow for two different return types.
 export async function getStatus(markerOnly: true): Promise<RequestResult<string>>
-export async function getStatus(markerOnly: false): Promise<RequestResult<Status>>
+export async function getStatus(markerOnly?: false): Promise<RequestResult<Status>>
 
 /**
  * Get the status of the application.
