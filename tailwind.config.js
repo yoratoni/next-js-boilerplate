@@ -7,7 +7,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				rubik: ["var(--font-rubik)"],
+				"roboto-mono": ["var(--font-roboto-mono)"],
 			},
 			borderRadius: {
 				lg: "var(--radius)",
