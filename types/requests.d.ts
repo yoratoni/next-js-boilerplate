@@ -1,18 +1,24 @@
 import type { ErrorObj } from "lib/utils/errors"
 
 /**
- * The type for a successful request, containing a boolean `success` field and a data object of type T.
+ * The type for a successful request, containing the data of type T.
+ *
+ * The reason for the duplicate `success` field is to allow for the `SuccessfulRequest` type to be used
+ * directly.
  */
 export type SuccessfulRequest<T> = {
-	success: boolean
+	success: true
 	data: T
 }
 
 /**
- * The type for a failed request, containing a boolean `success` field, a message, and an error object.
+ * The type for a failed request, containing the error message and the error object.
+ *
+ * The reason for the duplicate `success` field is to allow for the `FailedRequest` type to be used
+ * directly.
  */
 export type FailedRequest = {
-	success: boolean
+	success: false
 	message: string
 	error: ErrorObj
 }

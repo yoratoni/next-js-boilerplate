@@ -1,3 +1,7 @@
+///========================================///
+/// Cybearl General API System: v2024.10.1 ///
+///========================================///
+
 import { AppErrors, formatErrorResponse } from "@/lib/utils/errors"
 import type { NextApiRequest, NextApiResponse } from "next"
 
