@@ -1,6 +1,20 @@
 import { AppErrors, formatErrorResponse } from "@/lib/utils/errors"
 import type { NextApiRequest, NextApiResponse } from "next"
 
+/**
+ * The returned type of the status API `GET` request.
+ */
+export type Status = {
+	status: "online"
+	marker: string
+	timestamp: string
+	version: {
+		raw: string
+		formatted: string
+	}
+	message: string
+}
+
 // biome-ignore lint/suspicious/useAwait: Next.js API routes needs to be async.
 async function handle(req: NextApiRequest, res: NextApiResponse) {
 	// The marker is a static public key that can be used to identify the application,
@@ -13,19 +27,18 @@ async function handle(req: NextApiRequest, res: NextApiResponse) {
 		return res.status(200).json(marker)
 	}
 
-	res.status(200).json({
-		success: true,
-		data: {
-			status: "online",
-			marker: marker,
-			timestamp: new Date().toISOString(),
-			version: {
-				raw: process.env.VERSION || "Unknown",
-				formatted: process.env.VERSION ? `v${process.env.VERSION}` : "Unknown",
-			},
-			message: "A website provided by Cybearl, all rights reserved.",
+	const status: Status = {
+		status: "online",
+		marker: marker,
+		timestamp: new Date().toISOString(),
+		version: {
+			raw: process.env.VERSION || "Unknown",
+			formatted: process.env.VERSION ? `v${process.env.VERSION}` : "Unknown",
 		},
-	})
+		message: "A website provided by Cybearl, all rights reserved.",
+	}
+
+	res.status(200).json({ success: true, data: status })
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
