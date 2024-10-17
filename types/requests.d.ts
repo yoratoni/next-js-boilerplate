@@ -1,10 +1,16 @@
 import type { ErrorObj } from "lib/utils/errors"
 
+/**
+ * The type for a successful request, containing a boolean `success` field and a data object of type T.
+ */
 export type SuccessfulRequest<T> = {
 	success: boolean
 	data: T
 }
 
+/**
+ * The type for a failed request, containing a boolean `success` field, a message, and an error object.
+ */
 export type FailedRequest = {
 	success: boolean
 	message: string

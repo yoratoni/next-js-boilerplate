@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from "next"
  * The returned type of the status API `GET` request.
  */
 export type Status = {
-	status: "online"
+	status: typeof process.env.NEXT_PUBLIC_APP_STATUS
 	marker: string
 	timestamp: string
 	version: {
@@ -17,19 +17,14 @@ export type Status = {
 
 // biome-ignore lint/suspicious/useAwait: Next.js API routes needs to be async.
 async function handle(req: NextApiRequest, res: NextApiResponse) {
-	// The marker is a static public key that can be used to identify the application,
-	// it is a non-sensitive value that can be shared publicly, generated via:
-	// openssl rand -base64 8
-	const marker = "XXXXXXXXXXX="
-
 	// If "markerOnly" query is present, only return the marker.
 	if (req.query.markerOnly === "true") {
-		return res.status(200).json(marker)
+		return res.status(200).json(process.env.NEXT_PUBLIC_MARKER)
 	}
 
 	const status: Status = {
-		status: "online",
-		marker: marker,
+		status: process.env.NEXT_PUBLIC_APP_STATUS,
+		marker: process.env.NEXT_PUBLIC_MARKER,
 		timestamp: new Date().toISOString(),
 		version: {
 			raw: process.env.VERSION || "Unknown",
