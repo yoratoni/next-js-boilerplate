@@ -1,6 +1,11 @@
-///========================================///
-/// Cybearl General API System: v2024.10.1 ///
-///========================================///
+///==============================================///
+/// CGAS: Cybearl General API System: v2024.10.1 ///
+/// All rights reserved.                         ///
+///                                              ///
+/// You can find the links of all the places     ///
+/// where this file is used at:                  ///
+/// https://github.com/cybearl/cloud-environment ///
+///==============================================///
 
 import { AppErrors, formatErrorResponse } from "@/lib/utils/errors"
 import type { NextApiRequest, NextApiResponse } from "next"
