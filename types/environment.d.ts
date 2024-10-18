@@ -28,7 +28,7 @@ declare global {
 			 * $ openssl rand -base64 8
 			 * ```
 			 */
-			NEXT_PUBLIC_MARKER: string
+			NEXT_PUBLIC_APP_MARKER: string
 
 			/**
 			 * Status of the application (allows to enable/disable the application),
