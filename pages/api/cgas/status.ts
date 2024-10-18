@@ -28,12 +28,12 @@ export type Status = {
 async function handle(req: NextApiRequest, res: NextApiResponse) {
 	// If "markerOnly" query is present, only return the marker.
 	if (req.query.markerOnly === "true") {
-		return res.status(200).json(process.env.NEXT_PUBLIC_APP_MARKER)
+		return res.status(200).json(process.env.NEXT_PUBLIC_CGAS_MARKER)
 	}
 
 	const status: Status = {
 		status: process.env.NEXT_PUBLIC_APP_STATUS,
-		marker: process.env.NEXT_PUBLIC_APP_MARKER,
+		marker: process.env.NEXT_PUBLIC_CGAS_MARKER,
 		timestamp: new Date().toISOString(),
 		version: {
 			raw: process.env.VERSION || "Unknown",
