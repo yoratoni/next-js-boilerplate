@@ -1,3 +1,7 @@
+///========================================///
+/// Cybearl General API System: v2024.10.1 ///
+///========================================///
+
 import type { Status } from "@/pages/api/status"
 import type { RequestResult } from "@/types/requests"
 
