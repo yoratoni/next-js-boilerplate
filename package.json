@@ -1,7 +1,7 @@
 {
     "name": "next-js-boilerplate",
     "version": "2024.10.2",
-    "description": "A Next.js & BiomeJS boilerplate entirely configured to suit Cybearl's standards.",
+    "description": "An advanced and entirely pre-configured Next.js & BiomeJS boilerplate. ",
     "repository": "https://github.com/yoratoni/next-js-boilerplate",
     "author": "yoratoni <yoratoni.dev@gmail.com>",
     "license": "MIT",
