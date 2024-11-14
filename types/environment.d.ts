@@ -29,8 +29,6 @@ declare global {
 			 * ```
 			 */
 			NEXT_PUBLIC_CGAS_MARKER: string
-
-			Status
 		}
 	}
 }
