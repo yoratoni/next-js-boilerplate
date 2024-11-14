@@ -35,7 +35,7 @@ export function formatErrorResponse(error: ErrorObj, customMessage?: string, add
  * @param additionalData Additional data to include in the error (optional).
  * @returns The formatted error string.
  */
-export function fe(error: ErrorObj, message?: string, additionalData?: ErrorObjAdditionalData): string {
+export function stringifyError(error: ErrorObj, message?: string, additionalData?: ErrorObjAdditionalData): string {
 	if (message) error.message = message
 
 	let err: ErrorObj

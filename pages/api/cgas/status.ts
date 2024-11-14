@@ -36,8 +36,8 @@ async function handle(req: NextApiRequest, res: NextApiResponse) {
 		marker: process.env.NEXT_PUBLIC_CGAS_MARKER,
 		timestamp: new Date().toISOString(),
 		version: {
-			raw: process.env.VERSION || "Unknown",
-			formatted: process.env.VERSION ? `v${process.env.VERSION}` : "Unknown",
+			raw: process.env.VERSION || "unavailable",
+			formatted: process.env.VERSION ? `v${process.env.VERSION}` : "unavailable",
 		},
 		message: "A website provided by Cybearl, all rights reserved.",
 	}
