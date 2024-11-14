@@ -22,15 +22,6 @@ declare global {
 			NEXT_PUBLIC_DOMAIN: string
 
 			/**
-			 * The marker is a static public key that can be used to identify the application,
-			 * it is a non-sensitive value that can be shared publicly, generated via:
-			 * ```bash
-			 * $ openssl rand -base64 8
-			 * ```
-			 */
-			NEXT_PUBLIC_CGAS_MARKER: string
-
-			/**
 			 * Status of the application (allows to enable/disable the application),
 			 * It can either be:
 			 * - `enabled`: The application is enabled and available to the public.
