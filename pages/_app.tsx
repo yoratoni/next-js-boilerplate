@@ -11,7 +11,7 @@ type AppProps = NextAppProps & { nonce?: string }
 export default function App({ Component, pageProps, nonce }: AppProps) {
 	return (
 		<NonceProvider nonce={nonce}>
-			<div className={cn(RobotoMono.variable, "font-roboto-mono")}>
+			<div className={cn(RobotoMono.variable, "font-roboto-mono h-full")}>
 				<Component {...pageProps} />
 			</div>
 		</NonceProvider>
