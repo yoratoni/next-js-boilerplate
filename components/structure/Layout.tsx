@@ -1,6 +1,5 @@
 import type { AppHeadProps } from "@/components/structure/AppHead"
 import AppHead from "@/components/structure/AppHead"
-import Footer from "@/components/structure/Footer"
 import type { ReactNode } from "react"
 
 type LayoutProps = {
@@ -22,8 +21,6 @@ export default function Layout({
 				<main className="relative flex flex-col items-center justify-start flex-grow w-full overflow-x-hidden">
 					{children}
 				</main>
-
-				<Footer />
 			</div>
 		</>
 	)
