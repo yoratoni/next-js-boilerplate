@@ -18,8 +18,8 @@ export default function Layout({
 		<>
 			<AppHead customTitle={customTitle} customDescription={customDescription} doNotIndex={doNotIndex} />
 
-			<div className="flex flex-col w-full min-h-svh">
-				<main className="flex flex-col items-center justify-start flex-grow w-full overflow-x-hidden">
+			<div className="relative flex flex-col w-full min-h-dvh">
+				<main className="relative flex flex-col items-center justify-start flex-grow w-full overflow-x-hidden">
 					{children}
 				</main>
 

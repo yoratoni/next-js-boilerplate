@@ -11,7 +11,7 @@ export type AppHeadProps = {
 
 export default function AppHead({ customTitle, customDescription, doNotIndex }: AppHeadProps) {
 	const defaultTitle = "Next.js Boilerplate"
-	const defaultDescription = "A Next.js & BiomeJS boilerplate entirely configured to suit Cybearl's standards. "
+	const defaultDescription = "An advanced and entirely pre-configured Next.js & BiomeJS boilerplate."
 
 	const title = customTitle ? `${customTitle} | Next.js Boilerplate` : defaultTitle
 	const description = customDescription ? truncateString(customDescription, 150) : defaultDescription
