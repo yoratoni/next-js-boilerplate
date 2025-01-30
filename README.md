@@ -17,7 +17,7 @@
     ```
 
 ### Dev notes
-This boilerplate is specifically designed for my personal use & projects (e.g. Cybearl etc..), so it won't
+This boilerplate is specifically designed for my personal use & projects (e.g. [Cybearl](https://github.com/cybearl) etc..), so it won't
 probably be updated that often to newer version. For now, staying with:
 - **Next.js v14.2** (with page routing).
 - **React v18.3**.
