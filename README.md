@@ -12,7 +12,11 @@ Installation
     ```typescript
     $ npm install // yarn
     ```
-3. Start the development server
+3. Generate the Prisma client
+    ```typescript
+    $ npx prisma generate // yarn prisma generate
+    ```
+4. Start the development server
     ```typescript
     $ npm run dev // yarn dev
     ```
