@@ -5,7 +5,8 @@
   <p align="center">An advanced and entirely pre-configured<br />Next.js & BiomeJS boilerplate.</p>
 </p>
 
-### Installation
+Installation
+------------
 1. Clone the repository
 2. Install dependencies
     ```typescript
@@ -16,10 +17,10 @@
     $ npm run dev // yarn dev
     ```
 
-### Dev notes
+Dev notes
+---------
 This boilerplate is specifically designed for my personal use & projects (e.g. [Cybearl](https://github.com/cybearl) etc..), so it won't
 probably be updated that often to newer version. For now, staying with:
 - **Next.js v14.2** (with page routing).
 - **React v18.3**.
 - **EsLint v8.57**.
-
