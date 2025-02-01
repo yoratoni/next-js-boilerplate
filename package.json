@@ -19,12 +19,8 @@
         "build": "next build",
         "start": "next start",
         "test": "echo 'Unit testing is not configured for now, skipping..'",
-        "lint": "biome lint .",
-        "lint:fix": "biome lint . --apply",
-        "format": "biome format .",
-        "format:fix": "biome format --write .",
-        "next:lint": "next lint",
-        "check-types": "tsc --noEmit --skipLibCheck --incremental false",
+        "lint": "biome format --write . && biome lint . && next lint",
+        "lint:fix": "next lint --fix && biome lint . --apply && biome format --write .",
         "knip": "knip"
     },
     "dependencies": {
