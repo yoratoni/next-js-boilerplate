@@ -31,6 +31,9 @@ export function middleware(request: NextRequest) {
 	// All subdomains allowed for CSP
 	const wildcardDomain = `https://${process.env.NEXT_PUBLIC_DOMAIN.replace(/^https?:\/\//, "*.")}`
 
+	// Cybearl's domains allowed for tracking and analytics
+	const cybearlDomains = "https://*.cybearl.com https://cybearl.com"
+
 	// Iconify domains allowed for CSP
 	const iconifyDomains = `
         https://code.iconify.design
@@ -43,7 +46,7 @@ export function middleware(request: NextRequest) {
 
 	const cspHeader = `
         default-src 'none';
-        connect-src 'self' ${wildcardDomain} ${iconifyDomains};
+        connect-src 'self' ${wildcardDomain} ${cybearlDomains} ${iconifyDomains};
         script-src 'strict-dynamic' 'nonce-${nonce}';
         style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
         font-src 'self' *.googleapis.com *.gstatic.com;
@@ -71,7 +74,6 @@ export function middleware(request: NextRequest) {
 
 	// Response headers based on status
 	let response: NextResponse<unknown>
-
 	if (process.env.NEXT_PUBLIC_APP_STATUS === "enabled") {
 		response = NextResponse.next({ request: { headers: requestHeaders } })
 	} else {
@@ -83,6 +85,9 @@ export function middleware(request: NextRequest) {
 	return response
 }
 
+/**
+ * The Next.js middleware configuration.
+ */
 export const config = {
 	/**
 	 * Match all request paths except for the ones starting with:

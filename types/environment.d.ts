@@ -10,6 +10,11 @@ declare global {
 			VERSION: string
 
 			/**
+			 * The .npmrc auth token used to authenticate with the private Cybearl GitHub Package Registry.
+			 */
+			NPMRC_CYBEARL_AUTH_TOKEN: string
+
+			/**
 			 * The port of the application, used by the server to listen to incoming requests.
 			 */
 			PORT: string
@@ -24,6 +29,15 @@ declare global {
 			 * domain-related operations.
 			 */
 			NEXT_PUBLIC_DOMAIN: string
+
+			/**
+			 * The marker is a static public key that can be used to identify the application,
+			 * it is a non-sensitive value that can be shared publicly, generated via:
+			 * ```bash
+			 * $ openssl rand -base64 8
+			 * ```
+			 */
+			NEXT_PUBLIC_CGAS_MARKER: string
 
 			/**
 			 * Status of the application (allows to enable/disable the application),

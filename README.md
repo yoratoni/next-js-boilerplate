@@ -7,24 +7,53 @@
 
 Installation
 ------------
+#### 0. .npmrc file:
+`@cybearl/cypack` package is **not** published on the NPM registry.
+To install it, you need to have an `.npmrc` file in your project that redirect any `@cybearl` package
+to the GitHub package registry. If you don't have one, you can add **any** public GitHub token to your
+.env file and run the following command:
+```typescript
+$ npm run setup-npmrc // yarn setup-npmrc
+```
+
+In case you don't want to use any command, you can either check the `scripts/setup-npmrc.js` file to verify
+that the code is safe or create the `.npmrc` file manually with the following content:
+```
+@cybearl:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+always-auth=true
+```
+
+Note that, as the package is public, any token will do, even if you're not in the Cybearl organization.
+
 1. Clone the repository
-2. Install dependencies
+2. Create an .env file based on the `.env.sample` file and add the necessary environment variables
+3. Generate the .npmrc file:
+    ```typescript
+    $ npm run setup-npmrc // yarn setup-npmrc
+    ```
+4. Install dependencies
     ```typescript
     $ npm install // yarn
     ```
-3. Generate the Prisma client
+5. Generate the Prisma client
     ```typescript
     $ npx prisma generate // yarn prisma generate
     ```
-4. Start the development server
+6. Start the development server
     ```typescript
     $ npm run dev // yarn dev
     ```
 
 Dev notes
 ---------
-This boilerplate is specifically designed for my personal use & projects (e.g. [Cybearl](https://github.com/cybearl) etc..),
-so it won't probably be updated that often to newer version. For now, staying with:
+This boilerplate is specifically designed for [Cybearl](https://github.com/cybearl) projects, so it won't
+probably be updated that often to newer version and specifically aims to stay for stability first.
+
+For now, staying with:
 - **Next.js v14.2** (with page routing).
 - **React v18.3**.
 - **EsLint v8.57**.
+
+It should also be noted that the Next.js middleware contains a `connect-src` policy for Cybearl's
+domains that you can remove.
