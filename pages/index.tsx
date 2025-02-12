@@ -10,10 +10,10 @@ export default function Homepage() {
 					by&nbsp;
 					<Link
 						target="_blank"
-						href="https://github.com/yoratoni"
+						href="https://github.com/cybearl"
 						className="!font-medium text-blue-500 hover:text-blue-400 active:text-blue-600"
 					>
-						Yoratoni
+						Cybearl
 					</Link>
 					.
 				</h4>

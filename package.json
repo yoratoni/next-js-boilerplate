@@ -2,16 +2,16 @@
     "name": "next-js-boilerplate",
     "version": "2025.2.1",
     "description": "An advanced and entirely pre-configured Next.js & BiomeJS boilerplate.",
-    "author": "Yoratoni <yoratoni.dev@gmail.com>",
+    "author": "Cybearl <contact@cybearl.com> (https://www.cybearl.com/)",
     "license": "MIT",
     "private": true,
-    "homepage": "https://github.com/yoratoni/next-js-boilerplate",
+    "homepage": "https://github.com/cybearl/next-js-boilerplate",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yoratoni/next-js-boilerplate.git"
+        "url": "git+https://github.com/cybearl/next-js-boilerplate.git"
     },
     "bugs": {
-        "url": "https://github.com/yoratoni/next-js-boilerplate/issues"
+        "url": "https://github.com/cybearl/next-js-boilerplate/issues"
     },
     "scripts": {
         "v-bump": "yarn version --patch",
