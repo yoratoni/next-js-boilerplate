@@ -1,7 +1,9 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 
-// Fully permissive CSP header for development
+/**
+ * A fully permissive Content Security Policy header used for development purposes.
+ */
 const fullyPermissiveCspHeader = `
     default-src * data: mediastream: blob: filesystem: about: ws: wss: 'unsafe-eval' 'wasm-unsafe-eval' 'unsafe-inline';
     script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
@@ -17,13 +19,31 @@ const fullyPermissiveCspHeader = `
 	.replace(/\s{2,}/g, " ")
 	.trim()
 
+/**
+ * The Next.js middleware.
+ * @param request The incoming request.
+ * @returns The response.
+ */
 export function middleware(request: NextRequest) {
 	const isDev = process.env.NODE_ENV !== "production"
 	const nonce = crypto.randomUUID()
 
+	// All subdomains allowed for CSP
+	const wildcardDomain = `https://${process.env.NEXT_PUBLIC_DOMAIN.replace(/^https?:\/\//, "*.")}`
+
+	// Iconify domains allowed for CSP
+	const iconifyDomains = `
+        https://code.iconify.design
+        https://api.iconify.design
+        https://api.unisvg.com
+        https://api.simplesvg.com
+    `
+		.replace(/\s{2,}/g, " ")
+		.trim()
+
 	const cspHeader = `
         default-src 'none';
-        connect-src 'self' *.${process.env.NEXT_PUBLIC_DOMAIN};
+        connect-src 'self' ${wildcardDomain} ${iconifyDomains};
         script-src 'strict-dynamic' 'nonce-${nonce}';
         style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
         font-src 'self' *.googleapis.com *.gstatic.com;

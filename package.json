@@ -1,6 +1,6 @@
 {
     "name": "next-js-boilerplate",
-    "version": "2025.1.1",
+    "version": "2025.2.1",
     "description": "An advanced and entirely pre-configured Next.js & BiomeJS boilerplate.",
     "author": "Yoratoni <yoratoni.dev@gmail.com>",
     "license": "MIT",
@@ -15,9 +15,9 @@
     },
     "scripts": {
         "v-bump": "yarn version --patch",
-        "dev": "next dev",
+        "dev": "dotenv -- next dev",
         "build": "next build",
-        "start": "next start",
+        "start": "dotenv -- next start",
         "test": "echo 'Unit testing is not configured for now, skipping..'",
         "lint": "biome format --write . && biome lint . && next lint",
         "lint:fix": "next lint --fix && biome lint . --apply && biome format --write .",
@@ -45,6 +45,7 @@
         "@typescript-eslint/eslint-plugin": "^8.22.0",
         "@typescript-eslint/parser": "^8.21.0",
         "autoprefixer": "^10.4.20",
+        "dotenv-cli": "^8.0.0",
         "eslint": "^8.57.1",
         "eslint-config-next": "^15.1.6",
         "knip": "^5.43.6",

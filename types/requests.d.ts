@@ -1,4 +1,4 @@
-import type { ErrorObj } from "lib/utils/errors"
+import type { ErrorObj } from "lib/errors"
 
 /**
  * The type for a successful request, containing the data of type T.

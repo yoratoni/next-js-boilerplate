@@ -10,10 +10,14 @@ declare global {
 			VERSION: string
 
 			/**
-			 * The environment of the application, can either be "development" or "production",
-			 * we chose not to use `test` or `testing` as we don't find it relevant enough.
+			 * The port of the application, used by the server to listen to incoming requests.
 			 */
-			NODE_ENV: "development" | "production"
+			PORT: string
+
+			/**
+			 * The environment of the application.
+			 */
+			NODE_ENV: "development" | "preview" | "production"
 
 			/**
 			 * The domain of the application, used for the middleware in production, and other

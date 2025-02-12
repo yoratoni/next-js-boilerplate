@@ -15,5 +15,8 @@
         "no-unused-vars": "off",
         // TypeScript specific rules
         "@typescript-eslint/no-unused-vars": "off"
-    }
+    },
+    "ignorePatterns": [
+        "scripts/*.js"
+    ]
 }

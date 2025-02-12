@@ -1,9 +1,4 @@
 /**
- * The type definition for additional data that can be attached to an error object.
- */
-export type ErrorObjAdditionalData = { [key: string]: unknown } | string | string[] | number | number[] | null
-
-/**
  * The type definition for an error object.
  */
 export type ErrorObj = {
@@ -16,7 +11,7 @@ export type ErrorObj = {
 /**
  * Formats an `ErrorObj` into a standard error sent back by an API endpoint.
  */
-export function formatErrorResponse(error: ErrorObj, customMessage?: string, additionalData?: ErrorObjAdditionalData) {
+export function formatErrorResponse(error: ErrorObj, customMessage?: string, additionalData?: unknown) {
 	let err: ErrorObj
 	if (additionalData) err = { ...error, data: additionalData }
 	else err = error
@@ -35,7 +30,7 @@ export function formatErrorResponse(error: ErrorObj, customMessage?: string, add
  * @param additionalData Additional data to include in the error (optional).
  * @returns The formatted error string.
  */
-export function stringifyError(error: ErrorObj, message?: string, additionalData?: ErrorObjAdditionalData): string {
+export function stringifyError(error: ErrorObj, message?: string, additionalData?: unknown): string {
 	if (message) error.message = message
 
 	let err: ErrorObj
@@ -54,9 +49,21 @@ export function stringifyError(error: ErrorObj, message?: string, additionalData
 }
 
 /**
- * Contains all the available errors for the application.
+ * Contains all the standard available errors for the application, it serves as a base
+ * to extend with your custom errors.
+ *
+ * The recommended way is to create an `AppErrors` object that extends this one, preferably
+ * at a place similar to `lib/errors.ts`:
+ * ```typescript
+ * import { BaseErrors } from "@cybearl/cypack"
+ *
+ * export const AppErrors = {
+ *     ...BaseErrors,
+ *     // Add your custom errors here
+ * }
+ * ```
  */
-export const AppErrors = {
+export const BaseErrors = {
 	//=======
 	//  400
 	//=======
@@ -146,6 +153,12 @@ export const AppErrors = {
 		message: "Internal server error.",
 		data: null,
 	},
+	BACKEND_FUNCTION_RUNNING_ON_CLIENT: {
+		status: 500,
+		name: "BackendFunctionRunningOnClient",
+		message: "A function reserved for the backend is running on the client.",
+		data: null,
+	},
 
 	//=======
 	//  501
@@ -166,4 +179,4 @@ export const AppErrors = {
 		message: "Bandwidth limit exceeded.",
 		data: null,
 	},
-}
+} as const satisfies Record<string, ErrorObj>

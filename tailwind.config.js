@@ -20,6 +20,7 @@ module.exports = {
 	},
 	plugins: [
 		require("tailwindcss-animate"),
+
 		// Adding child variants
 		plugin(({ addVariant, matchVariant }) => {
 			addVariant("child", "& > *")
