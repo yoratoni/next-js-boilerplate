@@ -1,5 +1,5 @@
-import { truncateString } from "@/lib/utils/formats"
-import { currentUrlOrigin } from "@/lib/utils/urls"
+import { truncateString } from "@cybearl/cypack"
+import { currentUrlOrigin } from "@cybearl/cypack/frontend"
 import Head from "next/head"
 import { useRouter } from "next/router"
 

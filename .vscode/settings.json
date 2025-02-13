@@ -32,7 +32,6 @@
         "**/.project": true,
         "**/.pytest_cache": true,
         "**/.settings": true,
-        "**/.vscode": true,
         "**/.yarn": true,
         "**/.yarnrc": true,
         "**/blob_storage": true,
@@ -41,6 +40,7 @@
         "**/contracts/src/deployments": true,
         "**/next-env.d.ts": true,
         "**/pubspec.lock": true,
-        "packages/contracts/cache": true
+        "packages/contracts/cache": true,
+        "**/.vscode": true
     }
 }
